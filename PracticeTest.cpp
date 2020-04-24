@@ -17,14 +17,15 @@ class PracticeTest : public ::testing::Test
 TEST(PracticeTest, is_simple_palindrome)
 {
     Practice obj;
-    bool actual = obj.isPalindrome("aa");
-    ASSERT_TRUE(actual);
+    ASSERT_TRUE(obj.isPalindrome("aa");
+    ASSERT_TRUE(obj.isPalindrome("abba");
+    ASSERT_TRUE(obj.isPalindrome("racecar");
 }
 
 TEST(PracticeTest, is_palindrome_with_mixed_case)
 {
-	Practice obj;
-	ASSERT_TRUE(obj.isPalindrome("Aa"));
+    Practice obj;
+    ASSERT_TRUE(obj.isPalindrome("Aa"));
     ASSERT_TRUE(obj.isPalindrome("CiViC"));
     ASSERT_TRUE(obj.isPalindrome("AnnA"));
     ASSERT_TRUE(obj.isPalindrome("RacEcar"));
@@ -51,5 +52,15 @@ TEST(PracticeTest, is_palindrome_with_punctuation_whitespace_and_mixed_case)
     Practice obj;
     ASSERT_TRUE(obj.isPalindrome("Was it a cat I saw?"));
     ASSERT_TRUE(obj.isPalindrome("Eva, can I see bees in a cave?"));
+}
+
+TEST(PracticeTest, is_not_a_palindrome)
+{
+    Practice obj;
+    ASSERT_FALSE(obj.isPalindrome("Ba"));
+    ASSERT_FALSE(obj.isPalindrome("ab"));
+    ASSERT_FALSE(obj.isPalindrome("master branch"));
+    ASSERT_FALSE(obj.isPalindrome("nerd"));
+    ASSERT_FALSE(obj.isPalindrome("this is a sentence."));
 }
 
