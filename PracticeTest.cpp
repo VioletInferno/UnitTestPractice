@@ -65,6 +65,26 @@ TEST(PracticeTest, negative_zero_sorting)
     ASSERT_LE(a[2], a[0]);
 }
 
+TEST(PracticeTest, two_equal_sorting)
+{
+    Practice obj;
+    int a[3] = {1, 1, 2};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_EQ(a[0], 2);
+    ASSERT_EQ(a[1], 1);
+    ASSERT_EQ(a[2], 1);
+}
+
+TEST(PracticeTest, two_equal_negative_sorting)
+{
+    Practice obj;
+    int a[3] = {-5, -1, -1};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_EQ(a[0], -1);
+    ASSERT_EQ(a[1], -1);
+    ASSERT_EQ(a[2], -5);
+}
+
 // isPalindrome tests.
 TEST(PracticeTest, is_simple_palindrome)
 {
