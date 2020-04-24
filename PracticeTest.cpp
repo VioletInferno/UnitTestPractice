@@ -17,9 +17,9 @@ class PracticeTest : public ::testing::Test
 TEST(PracticeTest, is_simple_palindrome)
 {
     Practice obj;
-    ASSERT_TRUE(obj.isPalindrome("aa");
-    ASSERT_TRUE(obj.isPalindrome("abba");
-    ASSERT_TRUE(obj.isPalindrome("racecar");
+    ASSERT_TRUE(obj.isPalindrome("aa"));
+    ASSERT_TRUE(obj.isPalindrome("abba"));
+    ASSERT_TRUE(obj.isPalindrome("racecar"));
 }
 
 TEST(PracticeTest, is_palindrome_with_mixed_case)
