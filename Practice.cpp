@@ -18,12 +18,13 @@ void Practice::sortDescending(int & first, int & second, int & third)
     int temp = second;
     second = third;
     third = temp;
-  }
-  if( first < third )
-  {
-    int temp = first;
-    first = third;
-    third = temp;
+  
+    if( first < third )
+    {
+        int temp = first;
+        first = third;
+        third = temp;
+    }
   }
 }
 
