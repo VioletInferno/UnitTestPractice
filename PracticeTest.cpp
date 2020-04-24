@@ -14,6 +14,16 @@ class PracticeTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
+TEST(PracticeTest, simple_sorting)
+{
+    Practice obj;
+    int a[3] = {2, 1, 0};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_LE(a[1], a[0]);
+    ASSERT_LE(a[2], a[1]);
+    ASSERT_LE(a[2], a[0]);
+}
+
 TEST(PracticeTest, is_simple_palindrome)
 {
     Practice obj;
