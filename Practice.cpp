@@ -49,9 +49,9 @@ bool Practice::isPalindrome(string input)
   int high = input.length();
   while (low <= high)
   {
-      if (!(input[low] < 'A' || input[low] > 'Z'))
+      if (!(input[low] >= 'A' && input[low] <= 'Z'))
           low++;
-      else if (!(input[high] < 'A' || input[high] > 'Z'))
+      else if (!(input[high] >= 'A' && input[high] <= 'Z'))
           high--;
       else if (input[low] == input[high])
       {
