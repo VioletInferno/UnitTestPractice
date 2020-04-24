@@ -65,7 +65,6 @@ TEST(PracticeTest, negative_zero_sorting)
     ASSERT_LE(a[2], a[0]);
 }
 
-
 // isPalindrome tests.
 TEST(PracticeTest, is_simple_palindrome)
 {
@@ -92,7 +91,7 @@ TEST(PracticeTest, is_palindrome_with_whitespace)
     ASSERT_TRUE(obj.isPalindrome("was it a cat i saw"));
 }
 
-TEST(PracticeTest, is_palindrom_with_whitespace_and_mixed_case)
+TEST(PracticeTest, is_palindrome_with_whitespace_and_mixed_case)
 {
     Practice obj;
     ASSERT_TRUE(obj.isPalindrome("Race Car"));
@@ -117,3 +116,20 @@ TEST(PracticeTest, is_not_a_palindrome)
     ASSERT_FALSE(obj.isPalindrome("this is a sentence."));
 }
 
+TEST(PracticeTest, is_empty_palindrome)
+{
+    Practice obj;
+    ASSERT_TRUE(obj.isPalindrome(""));
+}
+
+TEST(PracticeTest, is_whitespace_palindrome)
+{
+    Practice obj;
+    ASSERT_TRUE(obj.isPalindrome("    "));
+}
+
+TEST(PracticeTest, are_symbols_a_palindrome)
+{
+    Practice obj;
+    ASSERT_TRUE(obj.isPalindrome("^_!%!$#abba#$!%!_^"));
+}
