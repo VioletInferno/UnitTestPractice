@@ -14,6 +14,7 @@ class PracticeTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
+// sortDescending tests
 TEST(PracticeTest, simple_sorting)
 {
     Practice obj;
@@ -24,6 +25,48 @@ TEST(PracticeTest, simple_sorting)
     ASSERT_LE(a[2], a[0]);
 }
 
+TEST(PracticeTest, reverse_sorting)
+{
+    Practice obj;
+    int a[3] = {0, 1, 2};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_LE(a[1], a[0]);
+    ASSERT_LE(a[2], a[1]);
+    ASSERT_LE(a[2], a[0]);
+}
+
+TEST(PracticeTest, positive_and_negative_sorting)
+{
+    Practice obj;
+    int a[3] = {-500, 0, 500};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_LE(a[1], a[0]);
+    ASSERT_LE(a[2], a[1]);
+    ASSERT_LE(a[2], a[0]);
+}
+
+TEST(PracticeTest, negative_sorting)
+{
+    Practice obj;
+    int a[3] = {-2, -3, -4};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_LE(a[1], a[0]);
+    ASSERT_LE(a[2], a[1]);
+    ASSERT_LE(a[2], a[0]);
+}
+
+TEST(PracticeTest, negative_zero_sorting)
+{
+    Practice obj;
+    int a[3] = {0, -0, 0};
+    obj.sortDescending(a[0], a[1], a[2]);
+    ASSERT_LE(a[1], a[0]);
+    ASSERT_LE(a[2], a[1]);
+    ASSERT_LE(a[2], a[0]);
+}
+
+
+// isPalindrome tests.
 TEST(PracticeTest, is_simple_palindrome)
 {
     Practice obj;
