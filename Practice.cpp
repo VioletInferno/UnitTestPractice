@@ -35,17 +35,41 @@ bool Practice::isPalindrome(string input)
 {
   for(unsigned int i=0; i < input.size(); i++)
   {
-    if( input[i] >= 'a' && input[i] <= 'z' )
+    if( input[i] < 'A' || input[i] > 'Z' )
     {
       //change lower case to upper case
       input[i] = input[i] - ('a' - 'A');
     }
   }
+  
+  // Takes into account punctuation and whitespace.
+  // Sourced from:
+  // https://www.geeksforgeeks.org/sentence-palindrome-palindrome-removing-spaces-dots-etc/
+  int low = 0;
+  int high = input.length();
+  while (low <= high)
+  {
+      if (!(input[low] < 'A' || input[low] > 'Z'))
+          low++;
+      else if (!(input[high] < 'A' || input[high] > 'Z'))
+          high--;
+      else if (input[low] == input[high])
+      {
+          low++;
+          high--;
+      }
+      else
+          return false;
+  }
+  return true;
+
+  /*
   for(unsigned int i=0; i < input.size()/2; i++)
   {
     if( input[i] != input[input.size()-1-i] )
       return false; 
   }
   return true;
+  */
 }
 
